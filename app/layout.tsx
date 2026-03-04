@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Geist } from 'next/font/google'
 import './globals.css'
+import StaggeredMenu from '@/components/nav/StaggeredMenu'
 
 const dmSerif = DM_Serif_Display({
   weight: '400',
@@ -37,7 +38,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSerif.variable} ${geist.variable}`}>
-      <body>{children}</body>
+      <body>
+        <StaggeredMenu
+          isFixed
+          position="right"
+          colors={['#7C6AC4', '#F89151']}
+          accentColor="#F89151"
+          menuButtonColor="#000000"
+          openMenuButtonColor="#ffffff"
+          displayItemNumbering={false}
+          items={[
+            { label: 'Mission', link: '/mission' },
+            { label: 'Events', link: '/events' },
+            { label: 'Library', link: '/library' },
+            { label: 'Writing', link: '/writing' },
+            { label: 'Ship Log', link: '/shiplog' },
+          ]}
+          socialItems={[
+            { label: 'X', link: 'https://x.com/ThoBustos' },
+            { label: 'LinkedIn', link: 'https://www.linkedin.com/in/thomasbustos/' },
+            { label: 'GitHub', link: 'https://github.com/ThoBustos' },
+            { label: 'YouTube', link: 'https://www.youtube.com/@lets-talk-ai' },
+            { label: 'Substack', link: 'https://thomasbustos.substack.com/' },
+            { label: 'TikTok', link: 'https://www.tiktok.com/@lets_talk_ai' },
+          ]}
+        />
+        {children}
+      </body>
     </html>
   )
 }
