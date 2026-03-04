@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --purple: #7C6AC4;
+  --orange: #F89151;
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection styling */
+::selection {
+  background: #000;
+  color: #fff;
+}
