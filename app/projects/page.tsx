@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 
 interface Project {
   name: string
-  tagline: string
   description: string
   year: string
   tags: string[]
@@ -12,57 +11,66 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    name: 'OpenYoko',
-    tagline: 'An open-source AI operating system.',
-    description:
-      'Yoko-OS is a modular, agent-native operating system built for the era of AI. Designed around the idea that your computer should think with you, not just for you.',
-    year: '2025',
-    tags: ['AI', 'OS', 'Agents'],
-    url: 'https://github.com/ThoBustos/yoko-os',
-  },
-  {
-    name: 'LTAI News',
-    tagline: 'Daily AI intelligence for builders.',
-    description:
-      'Let\'s Talk AI News is a self-hosted newsletter system that aggregates, structures, and delivers daily AI digests. Built on Supabase with structured JSON content — no CMS bloat.',
-    year: '2025',
-    tags: ['Newsletter', 'AI', 'Supabase'],
-    url: 'https://github.com/ThoBustos/ltai-news',
-  },
-  {
-    name: 'MCP Quizz',
-    tagline: 'A quiz engine built as an MCP server.',
-    description:
-      'A Model Context Protocol server that turns any content — docs, transcripts, code — into interactive quizzes. Built to make learning inside Claude Code native.',
-    year: '2025',
-    tags: ['MCP', 'Claude', 'Learning'],
-    url: 'https://github.com/ThoBustos/mcp-quizz',
-  },
-  {
-    name: 'AI Native Club',
-    tagline: 'Community for builders going AI-native.',
-    description:
-      'A gathering place for engineers, founders, and operators who are rebuilding their workflows from the ground up with AI. Events, resources, and conversation.',
-    year: '2025',
-    tags: ['Community', 'AI'],
-    url: 'https://github.com/ThoBustos/ainativeclub',
-  },
+  // 2026 — newest first
   {
     name: 'thomasbustos.com v2',
-    tagline: 'This site — minimal, editorial, open.',
-    description:
-      'The second version of my personal portfolio. Built with Next.js 15, Tailwind v4, and GSAP. Design philosophy: white canvas, two accent colors, content carries the weight.',
-    year: '2025',
+    description: 'V2 of my personal website. Built with Next.js 15, Tailwind v4, and GSAP.',
+    year: '2026',
     tags: ['Next.js', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustosv2',
   },
   {
-    name: 'thomasbustos.com v1',
-    tagline: 'The original portfolio — a lot more going on.',
+    name: 'Quizz MCP',
     description:
-      'First version of my personal site. React SPA with a macOS dock nav, dark/light mode, click sparks, and a full library. Built when I wanted to explore what "personality" looked like on the web.',
-    year: '2024',
+      'MCP + Next.js app that turns any content into quizzes. I use it a lot when building to test myself on concepts, or when writing docs, strategy, processing calls, testing my understanding and exploring my own limiting beliefs.',
+    year: '2026',
+    tags: ['MCP', 'Next.js', 'Learning'],
+    url: 'https://github.com/ThoBustos/quizz-mcp',
+  },
+  {
+    name: 'AI Native Club',
+    description: 'Landing + app for AI Native Club, an AI community with top builders and founders.',
+    year: '2026',
+    tags: ['Community', 'AI'],
+    url: 'https://github.com/ThoBustos/ainativeclub',
+  },
+  {
+    name: 'Reader',
+    description:
+      'My tool to read papers with AI and quiz myself. This initiated the Quizz MCP project. I read the full GPT series of papers with this and had so much fun.',
+    year: '2026',
+    tags: ['AI', 'Research', 'Tools'],
+    url: 'https://github.com/ThoBustos/reader',
+  },
+  {
+    name: 'Dotfiles',
+    description:
+      'Personal dotfiles managed with Chezmoi. Neovim config, shell setup, and everything else that makes a machine feel like home.',
+    year: '2026',
+    tags: ['Dev', 'Neovim', 'Config'],
+    url: 'https://github.com/ThoBustos/dotfiles',
+  },
+  {
+    name: 'Yoko OS',
+    description:
+      'Probably my build I\'ve been using the most in the last months. My full system to manage day-to-day that I use with tmux.',
+    year: '2026',
+    tags: ['AI', 'Agents', 'tmux'],
+    url: 'https://github.com/ThoBustos/yoko-os',
+  },
+  // 2025 — newest first
+  {
+    name: 'LTAI News',
+    description:
+      'The generator of the AI newsletter. Tracks my favorite YouTube channels and creates a daily report.',
+    year: '2025',
+    tags: ['Newsletter', 'AI', 'Python'],
+    url: 'https://github.com/ThoBustos/ltai-news',
+  },
+  {
+    name: 'thomasbustos.com v1',
+    description: 'First version of my personal landing.',
+    year: '2025',
     tags: ['React', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustos',
   },
@@ -177,18 +185,6 @@ export default function ProjectsPage() {
                         ))}
                       </div>
                     </div>
-
-                    {/* Tagline */}
-                    <p
-                      className="m-0 mb-2 text-black"
-                      style={{
-                        fontFamily: 'var(--font-geist), sans-serif',
-                        fontSize: '0.9rem',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {project.tagline}
-                    </p>
 
                     {/* Description */}
                     <p
