@@ -391,9 +391,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         })()}
       </div>
       <header className="staggered-menu-header" aria-label="Main navigation header">
-        <div className="sm-logo" aria-label="Logo">
-          <span className="sm-logo-text">TB</span>
-        </div>
         <button
           ref={toggleBtnRef}
           className="sm-toggle"

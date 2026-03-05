@@ -52,7 +52,7 @@ export default function RootLayout({
             { label: 'Mission', link: '/mission' },
             { label: 'Events', link: '/events' },
             { label: 'Library', link: '/library' },
-            { label: 'News', link: '/writing' },
+            { label: 'AI News', link: '/ainews' },
             { label: 'Projects', link: '/projects' },
           ]}
           socialItems={[
