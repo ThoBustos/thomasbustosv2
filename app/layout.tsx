@@ -48,11 +48,12 @@ export default function RootLayout({
           openMenuButtonColor="#ffffff"
           displayItemNumbering={false}
           items={[
+            { label: 'Home', link: '/' },
             { label: 'Mission', link: '/mission' },
             { label: 'Events', link: '/events' },
             { label: 'Library', link: '/library' },
-            { label: 'Writing', link: '/writing' },
-            { label: 'Ship Log', link: '/shiplog' },
+            { label: 'News', link: '/writing' },
+            { label: 'Projects', link: '/projects' },
           ]}
           socialItems={[
             { label: 'X', link: 'https://x.com/ThoBustos' },
