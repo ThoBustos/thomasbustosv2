@@ -17,6 +17,23 @@ const geist = Geist({
   display: 'swap',
 })
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Thomas Bustos',
+  url: 'https://thomasbustos.com',
+  description: '2x Cofounder · Builder · Writer. Building AI-native products and documenting the journey.',
+  jobTitle: 'Co-founder & Builder',
+  sameAs: [
+    'https://x.com/ThoBustos',
+    'https://www.linkedin.com/in/thomasbustos/',
+    'https://github.com/ThoBustos',
+    'https://www.youtube.com/@lets-talk-ai',
+    'https://thomasbustos.substack.com/',
+    'https://www.ainativeclub.com/',
+  ],
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://thomasbustos.com'),
   title: {
@@ -71,6 +88,10 @@ export default function RootLayout({
             { label: 'Projects', link: '/projects' },
           ]}
           socialItems={SOCIAL_LINKS.map(({ label, href }) => ({ label, link: href }))}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
       </body>

@@ -1,4 +1,5 @@
 export const SOCIAL_LINKS = [
+  { label: 'AI Native Club', href: 'https://www.ainativeclub.com/' },
   { label: 'X', href: 'https://x.com/ThoBustos' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thomasbustos/' },
   { label: 'GitHub', href: 'https://github.com/ThoBustos' },

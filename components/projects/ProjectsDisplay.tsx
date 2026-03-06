@@ -8,6 +8,7 @@ interface Project {
   year: string
   tags: string[]
   url?: string
+  liveUrl?: string
 }
 
 const projects: Project[] = [
@@ -18,6 +19,7 @@ const projects: Project[] = [
     year: '2026',
     tags: ['Next.js', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustosv2',
+    liveUrl: 'https://thomasbustos.com',
   },
   {
     name: 'Quizz MCP',
@@ -33,6 +35,7 @@ const projects: Project[] = [
     year: '2026',
     tags: ['Community', 'AI'],
     url: 'https://github.com/ThoBustos/ainativeclub',
+    liveUrl: 'https://www.ainativeclub.com/',
   },
   {
     name: 'Reader',
@@ -169,7 +172,7 @@ export default function ProjectsDisplay() {
                       )}
 
                       {/* Tags */}
-                      <div className="flex gap-1.5 flex-wrap">
+                      <div className="flex gap-1.5 flex-wrap items-center">
                         {project.tags.map(tag => (
                           <span
                             key={tag}
@@ -184,6 +187,23 @@ export default function ProjectsDisplay() {
                             {tag}
                           </span>
                         ))}
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              fontFamily: 'var(--font-geist), sans-serif',
+                              fontSize: '0.65rem',
+                              letterSpacing: '0.1em',
+                              color: '#F89151',
+                              textTransform: 'uppercase',
+                              textDecoration: 'none',
+                            }}
+                          >
+                            Live ↗
+                          </a>
+                        )}
                       </div>
                     </div>
 
