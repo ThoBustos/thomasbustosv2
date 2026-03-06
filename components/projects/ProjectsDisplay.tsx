@@ -9,6 +9,7 @@ interface Project {
   tags: string[]
   url?: string
   liveUrl?: string
+  oss?: boolean
 }
 
 const projects: Project[] = [
@@ -20,6 +21,7 @@ const projects: Project[] = [
     tags: ['Next.js', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustosv2',
     liveUrl: 'https://thomasbustos.com',
+    oss: true,
   },
   {
     name: 'Quizz MCP',
@@ -28,6 +30,7 @@ const projects: Project[] = [
     year: '2026',
     tags: ['MCP', 'Next.js', 'Learning'],
     url: 'https://github.com/ThoBustos/quizz-mcp',
+    oss: true,
   },
   {
     name: 'AI Native Club',
@@ -44,6 +47,7 @@ const projects: Project[] = [
     year: '2026',
     tags: ['AI', 'Research', 'Tools'],
     url: 'https://github.com/ThoBustos/reader',
+    oss: true,
   },
   {
     name: 'Dotfiles',
@@ -52,6 +56,7 @@ const projects: Project[] = [
     year: '2026',
     tags: ['Dev', 'Neovim', 'Config'],
     url: 'https://github.com/ThoBustos/dotfiles',
+    oss: true,
   },
   {
     name: 'Yoko OS',
@@ -60,6 +65,7 @@ const projects: Project[] = [
     year: '2026',
     tags: ['AI', 'Agents', 'tmux'],
     url: 'https://github.com/ThoBustos/yoko-os',
+    oss: true,
   },
   // 2025 — newest first
   {
@@ -69,6 +75,7 @@ const projects: Project[] = [
     year: '2025',
     tags: ['Newsletter', 'AI', 'Python'],
     url: 'https://github.com/ThoBustos/ltai-news',
+    oss: true,
   },
   {
     name: 'thomasbustos.com v1',
@@ -76,6 +83,7 @@ const projects: Project[] = [
     year: '2025',
     tags: ['React', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustos',
+    oss: true,
   },
 ]
 
@@ -202,6 +210,23 @@ export default function ProjectsDisplay() {
                             }}
                           >
                             Live ↗
+                          </a>
+                        )}
+                        {project.oss && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              fontFamily: 'var(--font-geist), sans-serif',
+                              fontSize: '0.65rem',
+                              letterSpacing: '0.1em',
+                              color: '#4ade80',
+                              textTransform: 'uppercase',
+                              textDecoration: 'none',
+                            }}
+                          >
+                            Open Source ↗
                           </a>
                         )}
                       </div>
