@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { DigestSummary } from '@/lib/digestService'
 
@@ -14,18 +12,14 @@ export default function IssueCard({ issue }: IssueCardProps) {
 
   return (
     <Link
-      href={`/writing/${issue.publish_date}`}
+      href={`/ainews/${issue.publish_date}`}
       className="group flex items-baseline gap-4 py-3 border-b border-neutral-50 no-underline"
       style={{ textDecoration: 'none' }}
     >
       {/* Day */}
       <span
         className="shrink-0 text-neutral-400"
-        style={{
-          fontFamily: 'var(--font-geist), sans-serif',
-          fontSize: '0.78rem',
-          width: '24px',
-        }}
+        style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', width: '24px' }}
       >
         {day}
       </span>
