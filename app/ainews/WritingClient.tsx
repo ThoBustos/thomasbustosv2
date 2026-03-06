@@ -54,7 +54,7 @@ export default function WritingClient({ issues }: WritingClientProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          News
+          AI News
         </motion.h1>
 
         {/* Search */}
