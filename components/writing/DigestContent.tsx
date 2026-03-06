@@ -186,6 +186,139 @@ function VideoCard({ video, index }: { video: VideoSection; index: number }) {
   )
 }
 
+// ─── V3 components ─────────────────────────────────────────────────────────────
+
+function Divider() {
+  return <hr style={{ border: 'none', borderTop: '1px solid #f0f0f0', margin: '1.75rem 0' }} />
+}
+
+interface VideoSectionV3 {
+  video_id?: string
+  video_url?: string
+  title?: string
+  speaker?: string
+  channel_name?: string
+  duration_minutes?: number
+  framing?: string
+  bullets?: string[]
+}
+
+interface ReferencesV3 {
+  people?: string[]
+  tools?: string[]
+  papers?: string[]
+}
+
+interface ContentJsonV3 {
+  schema_version: 'v3'
+  title?: string
+  meta?: string
+  intro?: string
+  pull_quote?: string | null
+  video_sections?: VideoSectionV3[]
+  references?: ReferencesV3
+}
+
+function DigestContentV3({ data }: { data: ContentJsonV3 }) {
+  return (
+    <div style={{ marginTop: '2rem' }}>
+
+      {/* Meta */}
+      {data.meta && (
+        <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 1.5rem' }}>
+          {data.meta}
+        </p>
+      )}
+
+      {/* Intro */}
+      {data.intro && (
+        <section style={{ marginBottom: '1.5rem' }}>
+          {data.intro.split('\n').filter(line => line.trim()).map((line, i) => (
+            <p key={i} style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', lineHeight: 1.55, color: '#000', margin: '0 0 0.25rem' }}>
+              {line}
+            </p>
+          ))}
+        </section>
+      )}
+
+      {/* Pull quote */}
+      {data.pull_quote && (
+        <blockquote style={{ margin: '0 0 1.5rem', borderLeft: '2px solid #7C6AC4', paddingLeft: '1rem' }}>
+          <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
+            &ldquo;{data.pull_quote}&rdquo;
+          </p>
+        </blockquote>
+      )}
+
+      <Divider />
+
+      {/* Video sections */}
+      {data.video_sections && data.video_sections.map((video, i) => (
+        <div key={video.video_id ?? i}>
+          {/* Title */}
+          <h3 style={{ fontFamily: 'var(--font-dm-serif), serif', fontSize: '1.2rem', fontWeight: 400, color: '#000', margin: '0 0 0.35rem' }}>
+            {video.title ?? `Video ${i + 1}`}
+          </h3>
+
+          {/* Meta */}
+          <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.6rem' }}>
+            {[video.speaker, video.channel_name, video.duration_minutes ? `${video.duration_minutes} min` : null].filter(Boolean).join(' · ')}
+          </p>
+
+          {/* Watch link */}
+          {video.video_url && (
+            <a href={video.video_url} target="_blank" rel="noopener noreferrer"
+              style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#F89151', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}>
+              Watch on YouTube →
+            </a>
+          )}
+
+          {/* Framing */}
+          {video.framing && (
+            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', lineHeight: 1.65, color: '#000', margin: '0 0 0.75rem' }}>
+              {video.framing}
+            </p>
+          )}
+
+          {/* Bullets */}
+          {video.bullets && video.bullets.length > 0 && (
+            <div style={{ marginBottom: '0.5rem' }}>
+              <BulletList items={video.bullets} />
+            </div>
+          )}
+
+          <Divider />
+        </div>
+      ))}
+
+      {/* References */}
+      {data.references && (
+        <section style={{ marginTop: '0.5rem' }}>
+          <SectionLabel>References</SectionLabel>
+          {data.references.people && data.references.people.length > 0 && (
+            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: '0 0 0.4rem' }}>
+              <span style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a3a3a3', marginRight: '0.6rem' }}>People</span>
+              {data.references.people.join(' · ')}
+            </p>
+          )}
+          {data.references.tools && data.references.tools.length > 0 && (
+            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: '0 0 0.4rem' }}>
+              <span style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a3a3a3', marginRight: '0.6rem' }}>Tools</span>
+              {data.references.tools.join(' · ')}
+            </p>
+          )}
+          {data.references.papers && data.references.papers.length > 0 && (
+            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: 0 }}>
+              <span style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a3a3a3', marginRight: '0.6rem' }}>Papers</span>
+              {data.references.papers.join(' · ')}
+            </p>
+          )}
+        </section>
+      )}
+    </div>
+  )
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
 
 interface ContrarianCorner {
@@ -220,6 +353,7 @@ interface KeyTension {
 }
 
 interface ContentJson {
+  schema_version?: string
   big_picture_bullets?: string[]
   daily_tldr?: string
   deeper_picture?: string
@@ -236,8 +370,15 @@ interface DigestContentProps {
 }
 
 export default function DigestContent({ content }: DigestContentProps) {
-  const data: ContentJson = typeof content === 'string' ? JSON.parse(content) : content
+  let data: ContentJson | null = null
+  try {
+    data = typeof content === 'string' ? JSON.parse(content) : content
+  } catch {
+    return <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', color: '#a3a3a3' }}>Content unavailable.</p>
+  }
   if (!data) return null
+
+  if (data.schema_version === 'v3') return <DigestContentV3 data={data as ContentJsonV3} />
 
   const bigPicture = data.big_picture_bullets?.length ? data.big_picture_bullets : null
   const tldr = data.daily_tldr ?? null
