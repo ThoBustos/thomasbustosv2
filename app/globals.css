@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-dm-serif), serif;
+  --font-sans: var(--font-geist), sans-serif;
+}
+
 :root {
   --purple: #7C6AC4;
   --orange: #F89151;

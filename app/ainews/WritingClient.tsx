@@ -37,6 +37,7 @@ export default function WritingClient({ issues }: WritingClientProps) {
 
   return (
     <main
+      id="main-content"
       className="min-h-screen px-8 md:px-16 lg:px-24 py-24"
       style={{ background: 'white' }}
     >
@@ -68,21 +69,15 @@ export default function WritingClient({ issues }: WritingClientProps) {
             placeholder="Search issues or topics…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            className="border-b border-neutral-200 focus:border-[#7C6AC4] outline-none transition-colors w-full"
             style={{
               fontFamily: 'var(--font-geist), sans-serif',
               fontSize: '0.85rem',
               color: '#000',
               background: 'none',
-              border: 'none',
-              borderBottom: '1px solid #e5e5e5',
-              outline: 'none',
-              width: '100%',
               maxWidth: '320px',
               padding: '6px 0',
-              transition: 'border-color 0.15s ease',
             }}
-            onFocus={(e) => (e.target.style.borderBottomColor = '#7C6AC4')}
-            onBlur={(e) => (e.target.style.borderBottomColor = '#e5e5e5')}
           />
         </motion.div>
 
