@@ -17,17 +17,23 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: 'Thomas Bustos',
-  description: 'Forward Deployed Engineer · Builder · Writer',
+  metadataBase: new URL('https://thomasbustos.com'),
+  title: {
+    default: 'Thomas Bustos',
+    template: '%s — Thomas Bustos',
+  },
+  description: '2x Cofounder · Builder · Writer',
   openGraph: {
     title: 'Thomas Bustos',
-    description: 'Forward Deployed Engineer · Builder · Writer',
+    description: '2x Cofounder · Builder · Writer',
     type: 'website',
+    siteName: 'Thomas Bustos',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
+    creator: '@ThoBustos',
     title: 'Thomas Bustos',
-    description: 'Forward Deployed Engineer · Builder · Writer',
+    description: '2x Cofounder · Builder · Writer',
   },
 }
 
@@ -52,7 +58,7 @@ export default function RootLayout({
             { label: 'Mission', link: '/mission' },
             { label: 'Events', link: '/events' },
             { label: 'Library', link: '/library' },
-            { label: 'News', link: '/ainews' },
+            { label: 'AI News', link: '/ainews' },
             { label: 'Projects', link: '/projects' },
           ]}
           socialItems={[
