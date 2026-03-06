@@ -7,12 +7,13 @@ export const metadata: Metadata = {
   description: 'Daily AI digest from the best channels.',
 }
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
 async function getIssues(): Promise<DigestSummary[]> {
   try {
     return await digestService.getArchive()
-  } catch {
+  } catch (err) {
+    console.error('[ainews] getIssues failed:', err)
     return []
   }
 }

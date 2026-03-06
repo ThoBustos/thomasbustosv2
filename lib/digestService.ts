@@ -6,7 +6,9 @@ import { digestSummarySchema, digestSchema } from '@/lib/schemas/digest'
 export type { DigestSummary, Digest } from '@/lib/schemas/digest'
 
 function getClient() {
-  return createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+  return createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.NEXT_PUBLIC_SUPABASE_ANON_KEY, {
+    global: { fetch: (url, opts) => fetch(url, { ...opts, cache: 'no-store' }) },
+  })
 }
 
 export const digestService = {
