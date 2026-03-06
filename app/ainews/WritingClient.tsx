@@ -27,7 +27,7 @@ export default function WritingClient({ issues }: WritingClientProps) {
     ? issues.filter((i) => {
         const q = query.toLowerCase()
         return (
-          i.title.toLowerCase().includes(q) ||
+          (i.title ?? '').toLowerCase().includes(q) ||
           i.keywords?.some((k) => k.toLowerCase().includes(q))
         )
       })
