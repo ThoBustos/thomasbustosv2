@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Serif_Display, Geist } from 'next/font/google'
 import './globals.css'
 import StaggeredMenu from '@/components/nav/StaggeredMenu'
+import { SOCIAL_LINKS } from '@/lib/data/social'
 
 const dmSerif = DM_Serif_Display({
   weight: '400',
@@ -45,6 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${geist.variable}`}>
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black"
+        >
+          Skip to content
+        </a>
         <StaggeredMenu
           isFixed
           position="right"
@@ -61,14 +68,7 @@ export default function RootLayout({
             { label: 'AI News', link: '/ainews' },
             { label: 'Projects', link: '/projects' },
           ]}
-          socialItems={[
-            { label: 'X', link: 'https://x.com/ThoBustos' },
-            { label: 'LinkedIn', link: 'https://www.linkedin.com/in/thomasbustos/' },
-            { label: 'GitHub', link: 'https://github.com/ThoBustos' },
-            { label: 'YouTube', link: 'https://www.youtube.com/@lets-talk-ai' },
-            { label: 'Substack', link: 'https://thomasbustos.substack.com/' },
-            { label: 'TikTok', link: 'https://www.tiktok.com/@lets_talk_ai' },
-          ]}
+          socialItems={SOCIAL_LINKS.map(({ label, href }) => ({ label, link: href }))}
         />
         {children}
       </body>
