@@ -1,7 +1,10 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { z } from 'zod'
 import { digestService } from '@/lib/digestService'
-import DigestContent from '@/components/writing/DigestContent'
+import DigestContent, { type ContentJson } from '@/components/writing/DigestContent'
+
+const dateSchema = z.object({ date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/) })
 
 export const revalidate = 3600
 
@@ -10,7 +13,9 @@ interface Props {
 }
 
 export default async function DigestPage({ params }: Props) {
-  const { date } = await params
+  const result = dateSchema.safeParse(await params)
+  if (!result.success) notFound()
+  const { date } = result.data
 
   let digest
   try {
@@ -29,6 +34,7 @@ export default async function DigestPage({ params }: Props) {
 
   return (
     <main
+      id="main-content"
       className="min-h-screen px-8 md:px-16 lg:px-24 py-24"
       style={{ background: 'white' }}
     >
@@ -90,7 +96,7 @@ export default async function DigestPage({ params }: Props) {
 
         {/* Content */}
         {digest.content_json ? (
-          <DigestContent content={digest.content_json} />
+          <DigestContent content={digest.content_json as ContentJson | string} />
         ) : (
           <p
             className="mt-10 text-neutral-300"

@@ -352,7 +352,7 @@ interface KeyTension {
   resolution?: string
 }
 
-interface ContentJson {
+export interface ContentJson {
   schema_version?: string
   big_picture_bullets?: string[]
   daily_tldr?: string
