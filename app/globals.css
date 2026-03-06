@@ -16,8 +16,14 @@
   box-sizing: border-box;
 }
 
-a {
-  cursor: pointer;
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select {
+  cursor: pointer !important;
 }
 
 html,

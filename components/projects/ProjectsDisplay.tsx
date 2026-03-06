@@ -6,7 +6,6 @@ interface Project {
   name: string
   description: string
   year: string
-  tags: string[]
   url?: string
   liveUrl?: string
   oss?: boolean
@@ -18,7 +17,6 @@ const projects: Project[] = [
     name: 'thomasbustos.com v2',
     description: 'V2 of my personal website. Built with Next.js 15, Tailwind v4, and GSAP.',
     year: '2026',
-    tags: ['Next.js', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustosv2',
     liveUrl: 'https://thomasbustos.com',
     oss: true,
@@ -28,7 +26,6 @@ const projects: Project[] = [
     description:
       'MCP + Next.js app that turns any content into quizzes. I use it a lot when building to test myself on concepts, or when writing docs, strategy, processing calls, testing my understanding and exploring my own limiting beliefs.',
     year: '2026',
-    tags: ['MCP', 'Next.js', 'Learning'],
     url: 'https://github.com/ThoBustos/quizz-mcp',
     oss: true,
   },
@@ -36,7 +33,6 @@ const projects: Project[] = [
     name: 'AI Native Club',
     description: 'Landing + app for AI Native Club, an AI community with top builders and founders.',
     year: '2026',
-    tags: ['Community', 'AI'],
     url: 'https://github.com/ThoBustos/ainativeclub',
     liveUrl: 'https://www.ainativeclub.com/',
   },
@@ -45,7 +41,6 @@ const projects: Project[] = [
     description:
       'My tool to read papers with AI and quiz myself. This initiated the Quizz MCP project. I read the full GPT series of papers with this and had so much fun.',
     year: '2026',
-    tags: ['AI', 'Research', 'Tools'],
     url: 'https://github.com/ThoBustos/reader',
     oss: true,
   },
@@ -54,7 +49,6 @@ const projects: Project[] = [
     description:
       'Personal dotfiles managed with Chezmoi. Neovim config, shell setup, and everything else that makes a machine feel like home.',
     year: '2026',
-    tags: ['Dev', 'Neovim', 'Config'],
     url: 'https://github.com/ThoBustos/dotfiles',
     oss: true,
   },
@@ -63,7 +57,6 @@ const projects: Project[] = [
     description:
       'Probably my build I\'ve been using the most in the last months. My full system to manage day-to-day that I use with tmux.',
     year: '2026',
-    tags: ['AI', 'Agents', 'tmux'],
     url: 'https://github.com/ThoBustos/yoko-os',
     oss: true,
   },
@@ -73,7 +66,6 @@ const projects: Project[] = [
     description:
       'The generator of the AI newsletter. Tracks my favorite YouTube channels and creates a daily report.',
     year: '2025',
-    tags: ['Newsletter', 'AI', 'Python'],
     url: 'https://github.com/ThoBustos/ltai-news',
     oss: true,
   },
@@ -81,7 +73,6 @@ const projects: Project[] = [
     name: 'thomasbustos.com v1',
     description: 'First version of my personal landing.',
     year: '2025',
-    tags: ['React', 'Portfolio'],
     url: 'https://github.com/ThoBustos/thomasbustos',
     oss: true,
   },
@@ -161,7 +152,6 @@ export default function ProjectsDisplay() {
                             color: '#000',
                             textDecoration: 'none',
                             lineHeight: 1.1,
-                            cursor: 'pointer',
                           }}
                         >
                           {project.name}
@@ -182,20 +172,6 @@ export default function ProjectsDisplay() {
 
                       {/* Tags */}
                       <div className="flex gap-1.5 flex-wrap items-center">
-                        {project.tags.map(tag => (
-                          <span
-                            key={tag}
-                            style={{
-                              fontFamily: 'var(--font-geist), sans-serif',
-                              fontSize: '0.65rem',
-                              letterSpacing: '0.1em',
-                              color: '#7C6AC4',
-                              textTransform: 'uppercase',
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
                         {project.oss && (
                           <a
                             href={project.url}
@@ -208,7 +184,6 @@ export default function ProjectsDisplay() {
                               color: '#4ade80',
                               textTransform: 'uppercase',
                               textDecoration: 'none',
-                              cursor: 'pointer',
                             }}
                           >
                             Open Source ↗
@@ -226,7 +201,6 @@ export default function ProjectsDisplay() {
                               color: '#F89151',
                               textTransform: 'uppercase',
                               textDecoration: 'none',
-                              cursor: 'pointer',
                             }}
                           >
                             Live ↗
