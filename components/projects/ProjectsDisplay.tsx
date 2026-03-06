@@ -161,6 +161,7 @@ export default function ProjectsDisplay() {
                             color: '#000',
                             textDecoration: 'none',
                             lineHeight: 1.1,
+                            cursor: 'pointer',
                           }}
                         >
                           {project.name}
@@ -207,6 +208,7 @@ export default function ProjectsDisplay() {
                               color: '#4ade80',
                               textTransform: 'uppercase',
                               textDecoration: 'none',
+                              cursor: 'pointer',
                             }}
                           >
                             Open Source ↗
@@ -224,6 +226,7 @@ export default function ProjectsDisplay() {
                               color: '#F89151',
                               textTransform: 'uppercase',
                               textDecoration: 'none',
+                              cursor: 'pointer',
                             }}
                           >
                             Live ↗
