@@ -35,11 +35,11 @@ export default async function DigestPage({ params }: Props) {
       <div className="max-w-2xl w-full">
         {/* Back */}
         <Link
-          href="/writing"
+          href="/ainews"
           className="inline-block mb-12 text-neutral-400 hover:text-[#F89151] transition-colors duration-150 no-underline"
           style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem' }}
         >
-          ← Writing
+          ← AI News
         </Link>
 
         {/* Date */}
