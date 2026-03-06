@@ -195,23 +195,6 @@ export default function ProjectsDisplay() {
                             {tag}
                           </span>
                         ))}
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              fontFamily: 'var(--font-geist), sans-serif',
-                              fontSize: '0.65rem',
-                              letterSpacing: '0.1em',
-                              color: '#F89151',
-                              textTransform: 'uppercase',
-                              textDecoration: 'none',
-                            }}
-                          >
-                            Live ↗
-                          </a>
-                        )}
                         {project.oss && (
                           <a
                             href={project.url}
@@ -227,6 +210,23 @@ export default function ProjectsDisplay() {
                             }}
                           >
                             Open Source ↗
+                          </a>
+                        )}
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              fontFamily: 'var(--font-geist), sans-serif',
+                              fontSize: '0.65rem',
+                              letterSpacing: '0.1em',
+                              color: '#F89151',
+                              textTransform: 'uppercase',
+                              textDecoration: 'none',
+                            }}
+                          >
+                            Live ↗
                           </a>
                         )}
                       </div>
