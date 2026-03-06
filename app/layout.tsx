@@ -29,12 +29,14 @@ export const metadata: Metadata = {
     description: '2x Cofounder · Builder · Writer',
     type: 'website',
     siteName: 'Thomas Bustos',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@ThoBustos',
     title: 'Thomas Bustos',
     description: '2x Cofounder · Builder · Writer',
+    images: ['/og-default.png'],
   },
 }
 
