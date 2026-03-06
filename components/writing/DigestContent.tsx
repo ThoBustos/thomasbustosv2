@@ -30,7 +30,7 @@ function renderMarkdown(text: string, keyPrefix = 'md'): React.ReactNode {
 function renderParagraphs(text: string, keyPrefix = 'p') {
   if (!text) return null
   return text.split(/\n\n+/).map((para, i) => (
-    <p key={`${keyPrefix}-${i}`} style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1rem', color: '#000' }}>
+    <p key={`${keyPrefix}-${i}`} style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1rem', color: '#000' }}>
       {renderMarkdown(para.trim(), `${keyPrefix}-${i}`)}
     </p>
   ))
@@ -40,7 +40,7 @@ function renderParagraphs(text: string, keyPrefix = 'p') {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#a3a3a3', marginBottom: '1rem', marginTop: 0 }}>
+    <p style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#a3a3a3', marginBottom: '1rem', marginTop: 0 }}>
       {children}
     </p>
   )
@@ -48,7 +48,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 style={{ fontFamily: 'var(--font-dm-serif), serif', fontSize: '1.5rem', fontWeight: 400, color: '#000', marginTop: '2.5rem', marginBottom: '0.75rem' }}>
+    <h2 className="font-serif" style={{ fontSize: '1.5rem', fontWeight: 400, color: '#000', marginTop: '2.5rem', marginBottom: '0.75rem' }}>
       {children}
     </h2>
   )
@@ -62,7 +62,7 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((item, i) => (
         <li key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
           <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#7C6AC4', flexShrink: 0, marginTop: '0.55rem' }} />
-          <span style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', lineHeight: 1.65, color: '#000' }}>
+          <span style={{ fontSize: '0.93rem', lineHeight: 1.65, color: '#000' }}>
             {renderMarkdown(item, `bullet-${i}`)}
           </span>
         </li>
@@ -101,26 +101,26 @@ function VideoCard({ video, index }: { video: VideoSection; index: number }) {
   return (
     <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: '1.5rem', marginTop: '1.5rem' }}>
       {/* Title */}
-      <h3 style={{ fontFamily: 'var(--font-dm-serif), serif', fontSize: '1.2rem', fontWeight: 400, color: '#000', margin: '0 0 0.35rem' }}>
+      <h3 className="font-serif" style={{ fontSize: '1.2rem', fontWeight: 400, color: '#000', margin: '0 0 0.35rem' }}>
         {video.title ?? `Video ${index + 1}`}
       </h3>
 
       {/* Meta */}
-      <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.75rem' }}>
+      <p style={{ fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.75rem' }}>
         {[video.channel_name, speakers, video.duration_minutes ? `${video.duration_minutes} min` : null].filter(Boolean).join(' · ')}
       </p>
 
       {/* Watch link */}
       {video.video_url && (
         <a href={video.video_url} target="_blank" rel="noopener noreferrer"
-          style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#F89151', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}>
+          style={{ fontSize: '0.78rem', color: '#F89151', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}>
           Watch on YouTube →
         </a>
       )}
 
       {/* Summary */}
       {video.condensed_summary && (
-        <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', lineHeight: 1.65, color: '#000', margin: '0 0 0.75rem' }}>
+        <p style={{ fontSize: '0.93rem', lineHeight: 1.65, color: '#000', margin: '0 0 0.75rem' }}>
           {video.condensed_summary}
         </p>
       )}
@@ -131,7 +131,7 @@ function VideoCard({ video, index }: { video: VideoSection; index: number }) {
           <SectionLabel>Logical Flow</SectionLabel>
           <ol style={{ margin: 0, paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {video.logical_flow.map((step, i) => (
-              <li key={i} style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.88rem', lineHeight: 1.55, color: '#000' }}>
+              <li key={i} style={{ fontSize: '0.88rem', lineHeight: 1.55, color: '#000' }}>
                 {renderMarkdown(step, `lf-${index}-${i}`)}
               </li>
             ))}
@@ -146,7 +146,7 @@ function VideoCard({ video, index }: { video: VideoSection; index: number }) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {video.key_quotes.map((q, i) => (
               <blockquote key={i} style={{ margin: 0, borderLeft: '2px solid #7C6AC4', paddingLeft: '1rem' }}>
-                <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.88rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
                   "{q}"
                 </p>
               </blockquote>
@@ -165,7 +165,7 @@ function VideoCard({ video, index }: { video: VideoSection; index: number }) {
               const value = colonIdx > -1 ? s.slice(0, colonIdx).trim() : s
               const description = colonIdx > -1 ? s.slice(colonIdx + 1).trim() : ''
               return (
-                <p key={i} style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.88rem', color: '#000', margin: 0 }}>
+                <p key={i} style={{ fontSize: '0.88rem', color: '#000', margin: 0 }}>
                   <span style={{ color: '#7C6AC4', fontWeight: 600 }}>{value}</span>
                   {description && ` — ${description}`}
                 </p>
@@ -221,11 +221,11 @@ interface ContentJsonV3 {
 
 function DigestContentV3({ data }: { data: ContentJsonV3 }) {
   return (
-    <div style={{ marginTop: '2rem' }}>
+    <div className="font-sans" style={{ marginTop: '2rem' }}>
 
       {/* Meta */}
       {data.meta && (
-        <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 1.5rem' }}>
+        <p style={{ fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 1.5rem' }}>
           {data.meta}
         </p>
       )}
@@ -234,7 +234,7 @@ function DigestContentV3({ data }: { data: ContentJsonV3 }) {
       {data.intro && (
         <section style={{ marginBottom: '1.5rem' }}>
           {data.intro.split('\n').filter(line => line.trim()).map((line, i) => (
-            <p key={i} style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', lineHeight: 1.55, color: '#000', margin: '0 0 0.25rem' }}>
+            <p key={i} style={{ fontSize: '0.95rem', lineHeight: 1.55, color: '#000', margin: '0 0 0.25rem' }}>
               {line}
             </p>
           ))}
@@ -244,7 +244,7 @@ function DigestContentV3({ data }: { data: ContentJsonV3 }) {
       {/* Pull quote */}
       {data.pull_quote && (
         <blockquote style={{ margin: '0 0 1.5rem', borderLeft: '2px solid #7C6AC4', paddingLeft: '1rem' }}>
-          <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
+          <p style={{ fontSize: '0.93rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
             &ldquo;{data.pull_quote}&rdquo;
           </p>
         </blockquote>
@@ -256,26 +256,26 @@ function DigestContentV3({ data }: { data: ContentJsonV3 }) {
       {data.video_sections && data.video_sections.map((video, i) => (
         <div key={video.video_id ?? i}>
           {/* Title */}
-          <h3 style={{ fontFamily: 'var(--font-dm-serif), serif', fontSize: '1.2rem', fontWeight: 400, color: '#000', margin: '0 0 0.35rem' }}>
+          <h3 className="font-serif" style={{ fontSize: '1.2rem', fontWeight: 400, color: '#000', margin: '0 0 0.35rem' }}>
             {video.title ?? `Video ${i + 1}`}
           </h3>
 
           {/* Meta */}
-          <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.6rem' }}>
+          <p style={{ fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.6rem' }}>
             {[video.speaker, video.channel_name, video.duration_minutes ? `${video.duration_minutes} min` : null].filter(Boolean).join(' · ')}
           </p>
 
           {/* Watch link */}
           {video.video_url && (
             <a href={video.video_url} target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#F89151', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}>
+              style={{ fontSize: '0.78rem', color: '#F89151', textDecoration: 'none', display: 'inline-block', marginBottom: '1rem' }}>
               Watch on YouTube →
             </a>
           )}
 
           {/* Framing */}
           {video.framing && (
-            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', lineHeight: 1.65, color: '#000', margin: '0 0 0.75rem' }}>
+            <p style={{ fontSize: '0.93rem', lineHeight: 1.65, color: '#000', margin: '0 0 0.75rem' }}>
               {video.framing}
             </p>
           )}
@@ -296,19 +296,19 @@ function DigestContentV3({ data }: { data: ContentJsonV3 }) {
         <section style={{ marginTop: '0.5rem' }}>
           <SectionLabel>References</SectionLabel>
           {data.references.people && data.references.people.length > 0 && (
-            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: '0 0 0.4rem' }}>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: '0 0 0.4rem' }}>
               <span style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a3a3a3', marginRight: '0.6rem' }}>People</span>
               {data.references.people.join(' · ')}
             </p>
           )}
           {data.references.tools && data.references.tools.length > 0 && (
-            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: '0 0 0.4rem' }}>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: '0 0 0.4rem' }}>
               <span style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a3a3a3', marginRight: '0.6rem' }}>Tools</span>
               {data.references.tools.join(' · ')}
             </p>
           )}
           {data.references.papers && data.references.papers.length > 0 && (
-            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: 0 }}>
+            <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: '#000', margin: 0 }}>
               <span style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#a3a3a3', marginRight: '0.6rem' }}>Papers</span>
               {data.references.papers.join(' · ')}
             </p>
@@ -374,7 +374,7 @@ export default function DigestContent({ content }: DigestContentProps) {
   try {
     data = typeof content === 'string' ? JSON.parse(content) : content
   } catch {
-    return <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', color: '#a3a3a3' }}>Content unavailable.</p>
+    return <p style={{ fontSize: '0.95rem', color: '#a3a3a3' }}>Content unavailable.</p>
   }
   if (!data) return null
 
@@ -384,13 +384,13 @@ export default function DigestContent({ content }: DigestContentProps) {
   const tldr = data.daily_tldr ?? null
 
   return (
-    <div style={{ marginTop: '2rem' }}>
+    <div className="font-sans" style={{ marginTop: '2rem' }}>
 
       {/* The Big Picture */}
       {(bigPicture || tldr) && (
         <section style={{ marginBottom: '2rem' }}>
           <SectionHeading>The Big Picture</SectionHeading>
-          {bigPicture ? <BulletList items={bigPicture} /> : <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: '#000' }}>{tldr}</p>}
+          {bigPicture ? <BulletList items={bigPicture} /> : <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#000' }}>{tldr}</p>}
         </section>
       )}
 
@@ -409,9 +409,9 @@ export default function DigestContent({ content }: DigestContentProps) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {data.convergence_points.map((point, i) => (
               <div key={i}>
-                <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.92rem', fontWeight: 600, color: '#000', margin: '0 0 0.4rem' }}>{point.concept}</p>
+                <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#000', margin: '0 0 0.4rem' }}>{point.concept}</p>
                 {point.video_titles && point.video_titles.length > 0 && (
-                  <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.4rem' }}>
+                  <p style={{ fontSize: '0.78rem', color: '#a3a3a3', margin: '0 0 0.4rem' }}>
                     {point.video_titles.join(' · ')}
                   </p>
                 )}
@@ -429,13 +429,13 @@ export default function DigestContent({ content }: DigestContentProps) {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {data.key_tensions.map((tension, i) => (
               <div key={i}>
-                <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.92rem', fontWeight: 600, color: '#000', margin: '0 0 0.75rem' }}>{tension.topic}</p>
+                <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#000', margin: '0 0 0.75rem' }}>{tension.topic}</p>
                 {tension.perspectives && tension.perspectives.length > 0 && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '0.75rem' }}>
                     {tension.perspectives.map((p, j) => (
                       <div key={j} style={{ borderLeft: '2px solid #e5e5e5', paddingLeft: '1rem' }}>
-                        {p.speaker && <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.72rem', color: '#a3a3a3', margin: '0 0 0.25rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{p.speaker}</p>}
-                        <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.9rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
+                        {p.speaker && <p style={{ fontSize: '0.72rem', color: '#a3a3a3', margin: '0 0 0.25rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{p.speaker}</p>}
+                        <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: '#000', margin: 0 }}>
                           {renderMarkdown(p.position, `pos-${i}-${j}`)}
                         </p>
                       </div>
@@ -443,7 +443,7 @@ export default function DigestContent({ content }: DigestContentProps) {
                   </div>
                 )}
                 {tension.resolution && (
-                  <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.6, margin: 0 }}>
                     <span style={{ color: '#a3a3a3', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Resolution: </span>
                     {renderMarkdown(tension.resolution, `res-${i}`)}
                   </p>
@@ -458,7 +458,7 @@ export default function DigestContent({ content }: DigestContentProps) {
       {data.video_sections && data.video_sections.length > 0 && (
         <section style={{ marginBottom: '2rem' }}>
           <SectionHeading>Video Breakdowns</SectionHeading>
-          <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.78rem', color: '#a3a3a3', margin: '-0.5rem 0 0' }}>
+          <p style={{ fontSize: '0.78rem', color: '#a3a3a3', margin: '-0.5rem 0 0' }}>
             {data.video_sections.length} {data.video_sections.length === 1 ? 'video' : 'videos'} analyzed
           </p>
           {data.video_sections.map((video, i) => (
@@ -472,14 +472,14 @@ export default function DigestContent({ content }: DigestContentProps) {
         <section style={{ marginBottom: '2rem', borderLeft: '2px solid #F89151', paddingLeft: '1.25rem' }}>
           <SectionHeading>Contrarian Corner</SectionHeading>
           {data.contrarian_corner.source_video_title && (
-            <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.72rem', color: '#a3a3a3', margin: '-0.5rem 0 0.75rem' }}>
+            <p style={{ fontSize: '0.72rem', color: '#a3a3a3', margin: '-0.5rem 0 0.75rem' }}>
               From: {data.contrarian_corner.source_video_title}
             </p>
           )}
           {(data.contrarian_corner.insight ?? data.contrarian_corner.claim) && (
             <div style={{ marginBottom: '0.75rem' }}>
               <SectionLabel>The Insight</SectionLabel>
-              <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: '#000', margin: 0 }}>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#000', margin: 0 }}>
                 {data.contrarian_corner.insight ?? data.contrarian_corner.claim}
               </p>
             </div>
@@ -487,7 +487,7 @@ export default function DigestContent({ content }: DigestContentProps) {
           {(data.contrarian_corner.why_counterintuitive ?? data.contrarian_corner.conventional_wisdom) && (
             <div style={{ marginBottom: '0.75rem' }}>
               <SectionLabel>{data.contrarian_corner.why_counterintuitive ? 'Why Counterintuitive' : 'Conventional Wisdom'}</SectionLabel>
-              <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.92rem', lineHeight: 1.65, color: '#000', margin: 0 }}>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.65, color: '#000', margin: 0 }}>
                 {data.contrarian_corner.why_counterintuitive ?? data.contrarian_corner.conventional_wisdom}
               </p>
             </div>
@@ -495,7 +495,7 @@ export default function DigestContent({ content }: DigestContentProps) {
           {data.contrarian_corner.evidence && (
             <div style={{ marginBottom: '0.75rem' }}>
               <SectionLabel>Evidence</SectionLabel>
-              <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.92rem', lineHeight: 1.65, color: '#000', margin: 0 }}>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.65, color: '#000', margin: 0 }}>
                 {data.contrarian_corner.evidence}
               </p>
             </div>
@@ -503,7 +503,7 @@ export default function DigestContent({ content }: DigestContentProps) {
           {data.contrarian_corner.so_what && (
             <div>
               <SectionLabel>So What</SectionLabel>
-              <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.92rem', lineHeight: 1.65, color: '#000', margin: 0 }}>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.65, color: '#000', margin: 0 }}>
                 {data.contrarian_corner.so_what}
               </p>
             </div>
@@ -520,9 +520,9 @@ export default function DigestContent({ content }: DigestContentProps) {
               <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#F89151', flexShrink: 0, marginTop: '0.6rem' }} />
                 <div>
-                  <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.93rem', fontWeight: 600, color: '#000', margin: 0 }}>{item.action}</p>
-                  {item.context && <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.85rem', color: '#555', lineHeight: 1.55, margin: '0.25rem 0 0' }}>{item.context}</p>}
-                  {item.first_step && <p style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.82rem', color: '#7C6AC4', margin: '0.25rem 0 0' }}>First step: {item.first_step}</p>}
+                  <p style={{ fontSize: '0.93rem', fontWeight: 600, color: '#000', margin: 0 }}>{item.action}</p>
+                  {item.context && <p style={{ fontSize: '0.85rem', color: '#555', lineHeight: 1.55, margin: '0.25rem 0 0' }}>{item.context}</p>}
+                  {item.first_step && <p style={{ fontSize: '0.82rem', color: '#7C6AC4', margin: '0.25rem 0 0' }}>First step: {item.first_step}</p>}
                 </div>
               </div>
             ))}

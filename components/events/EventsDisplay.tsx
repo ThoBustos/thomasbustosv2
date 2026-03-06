@@ -44,6 +44,7 @@ const roleStyles: Record<Role, { color: string }> = {
 export default function EventsDisplay() {
   return (
     <main
+      id="main-content"
       className="min-h-screen px-8 md:px-16 lg:px-24 py-24"
       style={{ background: 'white' }}
     >

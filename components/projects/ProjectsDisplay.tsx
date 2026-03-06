@@ -81,6 +81,7 @@ const years = [...new Set(projects.map(p => p.year))].sort((a, b) => Number(b) -
 export default function ProjectsDisplay() {
   return (
     <main
+      id="main-content"
       className="min-h-screen px-8 md:px-16 lg:px-24 py-24"
       style={{ background: 'white' }}
     >

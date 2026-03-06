@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 export default function MissionDisplay() {
   return (
     <main
+      id="main-content"
       className="min-h-screen flex flex-col items-center justify-center"
       style={{ background: 'white' }}
     >
