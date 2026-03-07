@@ -137,8 +137,8 @@ export default function ProjectsDisplay() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.25 + yi * 0.1 + pi * 0.07, duration: 0.4 }}
                   >
-                    {/* Name + link */}
-                    <div className="flex items-baseline gap-3 mb-1">
+                    {/* Name */}
+                    <div className="mb-2">
                       {project.url ? (
                         <a
                           href={project.url}
@@ -169,9 +169,11 @@ export default function ProjectsDisplay() {
                           {project.name}
                         </span>
                       )}
+                    </div>
 
-                      {/* Tags */}
-                      <div className="flex gap-1.5 flex-wrap items-center">
+                    {/* Tags */}
+                    {(project.oss || project.liveUrl) && (
+                      <div className="flex gap-4 items-center mb-2">
                         {project.oss && (
                           <a
                             href={project.url}
@@ -207,11 +209,11 @@ export default function ProjectsDisplay() {
                           </a>
                         )}
                       </div>
-                    </div>
+                    )}
 
                     {/* Description */}
                     <p
-                      className="m-0 text-neutral-500 leading-relaxed"
+                      className="m-0 mt-1 text-neutral-500 leading-relaxed"
                       style={{
                         fontFamily: 'var(--font-geist), sans-serif',
                         fontSize: '0.875rem',

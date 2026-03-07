@@ -3,7 +3,7 @@ import { SOCIAL_LINKS } from '@/lib/data/social'
 export function SocialLinks() {
   return (
     <nav aria-label="Social links">
-      <ul className="flex items-center gap-0 list-none m-0 p-0">
+      <ul className="flex flex-wrap justify-center items-center gap-0 list-none m-0 p-0">
         {SOCIAL_LINKS.map((link, i) => (
           <li key={link.label} className="flex items-center">
             <a
