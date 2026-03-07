@@ -167,7 +167,7 @@ function VideoCard({ video, index }: { video: VideoSection; index: number }) {
               return (
                 <p key={i} style={{ fontSize: '0.88rem', color: '#000', margin: 0 }}>
                   <span style={{ color: '#7C6AC4', fontWeight: 600 }}>{value}</span>
-                  {description && ` — ${description}`}
+                  {description && `: ${description}`}
                 </p>
               )
             })}

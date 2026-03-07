@@ -38,12 +38,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://thomasbustos.com'),
   title: {
     default: 'Thomas Bustos',
-    template: '%s — Thomas Bustos',
+    template: '%s | Thomas Bustos',
   },
-  description: '2x Cofounder · Builder · Writer',
+  description: "I'm a 2x founder building AI-native products. I document what I'm building and learning.",
   openGraph: {
     title: 'Thomas Bustos',
-    description: '2x Cofounder · Builder · Writer',
+    description: "I'm a 2x founder building AI-native products. I document what I'm building and learning.",
     type: 'website',
     siteName: 'Thomas Bustos',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     creator: '@ThoBustos',
     title: 'Thomas Bustos',
-    description: '2x Cofounder · Builder · Writer',
+    description: "I'm a 2x founder building AI-native products. I document what I'm building and learning.",
     images: ['/og-default.png'],
   },
 }

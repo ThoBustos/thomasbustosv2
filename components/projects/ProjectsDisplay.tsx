@@ -12,7 +12,7 @@ interface Project {
 }
 
 const projects: Project[] = [
-  // 2026 — newest first
+  // 2026 - newest first
   {
     name: 'thomasbustos.com v2',
     description: 'V2 of my personal website. Built with Next.js 15, Tailwind v4, and GSAP.',
@@ -60,7 +60,7 @@ const projects: Project[] = [
     url: 'https://github.com/ThoBustos/yoko-os',
     oss: true,
   },
-  // 2025 — newest first
+  // 2025 - newest first
   {
     name: 'LTAI News',
     description:

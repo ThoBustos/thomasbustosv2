@@ -4,14 +4,14 @@ import WritingClient from './WritingClient'
 
 export const metadata: Metadata = {
   title: 'AI News',
-  description: 'Daily AI digest from the best channels.',
+  description: 'An AI generated daily digest curated from top YouTube channels.',
 }
 
 export const revalidate = 3600
 
 async function getIssues(): Promise<DigestSummary[]> {
   try {
-    return await digestService.getArchive()
+    return await digestService.getArchive(20)
   } catch (err) {
     console.error('[ainews] getIssues failed:', err)
     return []

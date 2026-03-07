@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import IssueCard from '@/components/writing/IssueCard'
 import { DigestSummary } from '@/lib/digestService'
 
+const PAGE_SIZE = 20
+
 interface WritingClientProps {
   issues: DigestSummary[]
 }
@@ -20,8 +22,23 @@ function groupByMonth(issues: DigestSummary[]): { label: string; issues: DigestS
   return Array.from(map.entries()).map(([label, issues]) => ({ label, issues }))
 }
 
-export default function WritingClient({ issues }: WritingClientProps) {
+export default function WritingClient({ issues: initialIssues }: WritingClientProps) {
+  const [issues, setIssues] = useState(initialIssues)
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [hasMore, setHasMore] = useState(initialIssues.length === PAGE_SIZE)
   const [query, setQuery] = useState('')
+
+  async function loadMore() {
+    setLoadingMore(true)
+    try {
+      const res = await fetch(`/api/ainews?limit=${PAGE_SIZE}&offset=${issues.length}`)
+      const more: DigestSummary[] = await res.json()
+      setIssues((prev) => [...prev, ...more])
+      setHasMore(more.length === PAGE_SIZE)
+    } finally {
+      setLoadingMore(false)
+    }
+  }
 
   const filtered = query.trim()
     ? issues.filter((i) => {
@@ -117,7 +134,7 @@ export default function WritingClient({ issues }: WritingClientProps) {
                     className="hidden md:grid"
                     style={{ gridTemplateColumns: '100px 1fr', gap: '0 2rem' }}
                   >
-                    {/* Month label — desktop gutter */}
+                    {/* Month label - desktop gutter */}
                     <div style={{ paddingTop: '0.85rem' }}>
                       <span
                         style={{
@@ -149,12 +166,32 @@ export default function WritingClient({ issues }: WritingClientProps) {
                 </div>
               ))}
 
-              <p
-                className="text-neutral-300 md:pl-[132px]"
-                style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.75rem' }}
-              >
-                {filtered.length} {filtered.length === 1 ? 'issue' : 'issues'}
-              </p>
+              <div className="md:pl-[132px] flex items-center gap-6">
+                <p
+                  className="text-neutral-300"
+                  style={{ fontFamily: 'var(--font-geist), sans-serif', fontSize: '0.75rem' }}
+                >
+                  {filtered.length} {filtered.length === 1 ? 'issue' : 'issues'}
+                </p>
+                {hasMore && !query && (
+                  <button
+                    type="button"
+                    onClick={loadMore}
+                    disabled={loadingMore}
+                    style={{
+                      fontFamily: 'var(--font-geist), sans-serif',
+                      fontSize: '0.75rem',
+                      color: loadingMore ? '#d4d4d4' : '#7C6AC4',
+                      background: 'none',
+                      border: 'none',
+                      cursor: loadingMore ? 'default' : 'pointer',
+                      padding: 0,
+                    }}
+                  >
+                    {loadingMore ? 'Loading…' : 'Load more'}
+                  </button>
+                )}
+              </div>
             </>
           )}
         </motion.div>

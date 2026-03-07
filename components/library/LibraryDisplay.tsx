@@ -268,6 +268,7 @@ export default function LibraryDisplay() {
                     alt={selected.title}
                     width={140}
                     height={196}
+                    sizes="140px"
                     style={{ objectFit: 'cover', display: 'block', boxShadow: '0 8px 24px rgba(0,0,0,0.14)' }}
                   />
                 </div>

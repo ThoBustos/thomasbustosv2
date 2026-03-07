@@ -14,13 +14,13 @@ export const digestService = {
     return true
   },
 
-  async getArchive(limit = 60) {
+  async getArchive(limit = 60, offset = 0) {
     const supabase = getClient()
     const { data, error } = await supabase
       .from('daily_digests')
       .select('id, publish_date, title, keywords, video_count')
       .order('publish_date', { ascending: false })
-      .limit(limit)
+      .range(offset, offset + limit - 1)
     if (error) throw error
     return z.array(digestSummarySchema).parse(data)
   },

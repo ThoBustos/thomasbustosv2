@@ -2,13 +2,13 @@
 
 > 2x Cofounder · Builder · Writer. Building AI-native products and documenting the journey.
 
-Thomas Bustos is a technical co-founder, builder, and writer focused on AI-native software. He co-founded AI Native Club — a community for technical founders building AI-first companies — and builds open-source tools, writes about AI, and ships daily.
+Thomas Bustos is a technical co-founder, builder, and writer focused on AI-native software. He co-founded AI Native Club, a community for technical founders building AI-first companies, and builds open-source tools, writes about AI, and ships daily.
 
 ## Key Pages
 
 - [Home](https://thomasbustos.com): Personal landing
 - [Mission](https://thomasbustos.com/mission): Build exceptional products with exceptional people. Document everything along the way.
-- [Projects](https://thomasbustos.com/projects): Open source and personal projects — AI Native Club, Quizz MCP, OpenYoko, Reader, Dotfiles, and more
+- [Projects](https://thomasbustos.com/projects): Open source and personal projects: AI Native Club, Quizz MCP, OpenYoko, Reader, Dotfiles, and more
 - [AI News](https://thomasbustos.com/ainews): Daily AI digest curated from top YouTube channels
 - [Events](https://thomasbustos.com/events): Events and meetups
 - [Library](https://thomasbustos.com/library): Books and resources
