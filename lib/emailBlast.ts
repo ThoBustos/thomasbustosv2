@@ -45,6 +45,7 @@ export async function sendDigestBlast(publishDate: string) {
         keywords,
         issueUrl,
         unsubscribeUrl: `${siteUrl}/api/unsubscribe?token=${sub.unsubscribe_token}`,
+        contentJson: digest.content_json,
       }),
     }))
 
