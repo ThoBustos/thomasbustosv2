@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import IssueCard from '@/components/writing/IssueCard'
+import SubscribeForm from '@/components/writing/SubscribeForm'
 import { DigestSummary } from '@/lib/digestService'
 
 const PAGE_SIZE = 20
@@ -96,6 +97,18 @@ export default function WritingClient({ issues: initialIssues }: WritingClientPr
               padding: '6px 0',
             }}
           />
+        </motion.div>
+
+        {/* Subscribe */}
+        <motion.div
+          className="mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
+        >
+          <Suspense fallback={null}>
+            <SubscribeForm />
+          </Suspense>
         </motion.div>
 
         {/* Issue list */}
