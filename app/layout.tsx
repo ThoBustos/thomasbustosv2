@@ -55,6 +55,11 @@ export const metadata: Metadata = {
     description: "I'm a 2x founder building AI-native products. I document what I'm building and learning.",
     images: ['/og-default.png'],
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://thomasbustos.com/feed.xml',
+    },
+  },
 }
 
 export default function RootLayout({
