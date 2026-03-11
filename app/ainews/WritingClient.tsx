@@ -60,27 +60,34 @@ export default function WritingClient({ issues: initialIssues }: WritingClientPr
       style={{ background: 'white' }}
     >
       <div style={{ maxWidth: '760px', width: '100%' }}>
-        {/* Heading */}
-        <motion.h1
-          className="m-0 mb-6 tracking-tight text-black"
-          style={{
-            fontFamily: 'var(--font-dm-serif), serif',
-            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-            fontWeight: 400,
-          }}
+        {/* Heading + Subscribe */}
+        <motion.div
+          className="mb-6 flex items-baseline gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          AI News
-        </motion.h1>
+          <h1
+            className="m-0 tracking-tight text-black"
+            style={{
+              fontFamily: 'var(--font-dm-serif), serif',
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontWeight: 400,
+            }}
+          >
+            AI News
+          </h1>
+          <Suspense fallback={null}>
+            <SubscribeForm />
+          </Suspense>
+        </motion.div>
 
         {/* Search */}
         <motion.div
-          className="mb-8"
+          className="mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.4 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
         >
           <input
             type="text"
@@ -97,18 +104,6 @@ export default function WritingClient({ issues: initialIssues }: WritingClientPr
               padding: '6px 0',
             }}
           />
-        </motion.div>
-
-        {/* Subscribe */}
-        <motion.div
-          className="mb-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.4 }}
-        >
-          <Suspense fallback={null}>
-            <SubscribeForm />
-          </Suspense>
         </motion.div>
 
         {/* Issue list */}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
@@ -10,15 +10,21 @@ export default function SubscribeForm() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
   const [message, setMessage] = useState('')
+  const [open, setOpen] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (searchParams.get('confirmed') === '1') {
       setStatus('success')
-      setMessage("You're confirmed. Welcome to AI News.")
+      setMessage("You're in.")
     } else if (searchParams.get('unsubscribed') === '1') {
-      setMessage("You've been unsubscribed.")
+      setMessage("Unsubscribed.")
     }
   }, [searchParams])
+
+  useEffect(() => {
+    if (open) inputRef.current?.focus()
+  }, [open])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -44,83 +50,104 @@ export default function SubscribeForm() {
     }
   }
 
+  const font = 'var(--font-geist), sans-serif'
+
   if (status === 'success') {
     return (
-      <p
+      <span style={{ fontFamily: font, fontSize: '0.82rem', color: '#7C6AC4' }}>
+        {message}
+      </span>
+    )
+  }
+
+  if (!open) {
+    if (searchParams.get('unsubscribed') === '1') {
+      return (
+        <span style={{ fontFamily: font, fontSize: '0.82rem', color: '#666' }}>
+          Unsubscribed.
+        </span>
+      )
+    }
+
+    return (
+      <button
+        onClick={() => setOpen(true)}
         style={{
-          fontFamily: 'var(--font-geist), sans-serif',
-          fontSize: '0.8rem',
-          color: '#7C6AC4',
-          margin: 0,
+          fontFamily: font,
+          fontSize: '0.82rem',
+          color: '#000',
+          background: 'none',
+          border: 'none',
+          borderBottom: '1px solid #000',
+          cursor: 'pointer',
+          padding: '0 0 1px',
+          flexShrink: 0,
         }}
       >
-        {message}
-      </p>
+        Subscribe →
+      </button>
     )
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
-        <input
-          type="email"
-          required
-          placeholder="Your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={status === 'submitting'}
-          aria-label="Email address"
-          className="border-b border-neutral-200 focus:border-[#7C6AC4] outline-none transition-colors"
-          style={{
-            fontFamily: 'var(--font-geist), sans-serif',
-            fontSize: '0.85rem',
-            color: '#000',
-            background: 'none',
-            width: '200px',
-            padding: '6px 0',
-          }}
-        />
-        <button
-          type="submit"
-          disabled={status === 'submitting'}
-          style={{
-            fontFamily: 'var(--font-geist), sans-serif',
-            fontSize: '0.75rem',
-            color: status === 'submitting' ? '#d4d4d4' : '#7C6AC4',
-            background: 'none',
-            border: 'none',
-            cursor: status === 'submitting' ? 'default' : 'pointer',
-            padding: 0,
-            paddingBottom: '6px',
-          }}
-        >
-          {status === 'submitting' ? 'Sending…' : 'Subscribe'}
-        </button>
-      </form>
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}
+    >
+      <input
+        ref={inputRef}
+        type="email"
+        required
+        placeholder="your@email.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        disabled={status === 'submitting'}
+        aria-label="Email address"
+        className="border-b border-neutral-300 focus:border-black outline-none transition-colors"
+        style={{
+          fontFamily: font,
+          fontSize: '0.82rem',
+          color: '#000',
+          background: 'none',
+          width: '180px',
+          padding: '0 0 1px',
+        }}
+      />
       {status === 'error' && (
-        <p
-          style={{
-            fontFamily: 'var(--font-geist), sans-serif',
-            fontSize: '0.75rem',
-            color: '#F89151',
-            margin: '6px 0 0',
-          }}
-        >
+        <span style={{ fontFamily: font, fontSize: '0.72rem', color: '#c44b4b' }}>
           {message}
-        </p>
+        </span>
       )}
-      {searchParams.get('unsubscribed') === '1' && (
-        <p
-          style={{
-            fontFamily: 'var(--font-geist), sans-serif',
-            fontSize: '0.75rem',
-            color: '#d4d4d4',
-            margin: '6px 0 0',
-          }}
-        >
-          {message}
-        </p>
-      )}
-    </div>
+      <button
+        type="submit"
+        disabled={status === 'submitting'}
+        style={{
+          fontFamily: font,
+          fontSize: '0.82rem',
+          color: status === 'submitting' ? '#aaa' : '#7C6AC4',
+          background: 'none',
+          border: 'none',
+          cursor: status === 'submitting' ? 'default' : 'pointer',
+          padding: 0,
+        }}
+      >
+        {status === 'submitting' ? '…' : '→'}
+      </button>
+      <button
+        type="button"
+        onClick={() => { setOpen(false); setStatus('idle'); setMessage('') }}
+        style={{
+          fontFamily: font,
+          fontSize: '0.75rem',
+          color: '#bbb',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: 0,
+        }}
+      >
+        ✕
+      </button>
+    </form>
   )
 }
