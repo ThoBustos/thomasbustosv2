@@ -38,6 +38,7 @@ export const BOOKS: Book[] = [
   { title: 'Atomic Habits', author: 'James Clear', category: 'Mind', status: 'read', isFavorite: false, year: 2018, cover: '/img/books/atomic_habits.jpg' },
   { title: 'The 5 AM Club', author: 'Robin Sharma', category: 'Mind', status: 'read', isFavorite: false, year: 2018, cover: '/img/books/the_5_am_club.jpg' },
   { title: 'How to Win Friends and Influence People', author: 'Dale Carnegie', category: 'Mind', status: 'read', isFavorite: false, year: 1936, cover: '/img/books/how_to_win_friends_and_influence_people.jpg' },
+  { title: 'Crucial Conversations: Tools for Talking When Stakes Are High', author: 'Joseph Grenny, Kerry Patterson, Ron McMillan, Al Switzler, Emily Gregory', category: 'Mind', status: 'reading', isFavorite: false, year: 2021, cover: '/img/books/crucial_conversations.jpg' },
   { title: 'The Power of Now', author: 'Eckhart Tolle', category: 'Mind', status: 'read', isFavorite: false, year: 1997, cover: '/img/books/the_power_of_now.jpg' },
   { title: 'The Art of Happiness', author: 'Dalai Lama', category: 'Mind', status: 'read', isFavorite: false, year: 1998, cover: '/img/books/the_art_of_happiness.jpg' },
   { title: 'The Alchemist', author: 'Paulo Coelho', category: 'Mind', status: 'read', isFavorite: false, year: 1988, cover: '/img/books/the_alchemist.jpg' },
