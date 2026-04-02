@@ -22,6 +22,8 @@ export default function MissionDisplay() {
       >
         Build exceptional products with exceptional people.
         <br />
+        Have fun.
+        <br />
         Document everything along the way.
       </motion.h1>
     </main>
