@@ -1,5 +1,6 @@
 import { AnimatedName } from '@/components/hero/AnimatedName'
 import { SocialLinks } from '@/components/hero/SocialLinks'
+import { NewsletterRow } from '@/components/hero/NewsletterRow'
 
 export default function HomePage() {
   return (
@@ -35,6 +36,9 @@ export default function HomePage() {
       <div className="mt-12">
         <SocialLinks />
       </div>
+
+      {/* Newsletter */}
+      <NewsletterRow />
     </main>
   )
 }
