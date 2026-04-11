@@ -76,6 +76,13 @@ const projects: Project[] = [
     url: 'https://github.com/ThoBustos/thomasbustos',
     oss: true,
   },
+  // 2024
+  {
+    name: 'Lyah',
+    description: 'Voice-powered tutoring platform that lets educators build personalized learning experiences without giving up control of their curriculum.',
+    year: '2024',
+    liveUrl: 'https://lyah.ai',
+  },
 ]
 
 const years = [...new Set(projects.map(p => p.year))].sort((a, b) => Number(b) - Number(a))
