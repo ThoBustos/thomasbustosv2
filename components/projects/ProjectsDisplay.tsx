@@ -35,6 +35,7 @@ const projects: Project[] = [
     year: '2026',
     url: 'https://github.com/ThoBustos/ainativeclub',
     liveUrl: 'https://www.ainativeclub.com/',
+    oss: true,
   },
   {
     name: 'Reader',
