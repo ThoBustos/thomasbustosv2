@@ -23,6 +23,7 @@ const data: EventGroup[] = [
     year: '2026',
     events: [
       { month: 'Apr', name: 'AI Engineer Europe', location: 'London, UK', role: 'Attendee', url: 'https://www.ai.engineer/europe' },
+      { month: 'Mar', name: 'IE Edtech Summit', location: 'Madrid, Spain', role: 'Speaker' },
     ],
   },
   {
