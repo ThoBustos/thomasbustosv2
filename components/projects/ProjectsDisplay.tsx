@@ -67,6 +67,7 @@ const projects: Project[] = [
       'The generator of the AI newsletter. Tracks my favorite YouTube channels and creates a daily report.',
     year: '2025',
     url: 'https://github.com/ThoBustos/ltai-news',
+    liveUrl: 'https://thomasbustos.com/ainews',
     oss: true,
   },
   {
