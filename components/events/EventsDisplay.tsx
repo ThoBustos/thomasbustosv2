@@ -20,8 +20,7 @@ interface EventGroup {
 
 const data: EventGroup[] = [
   {
-    year: 'Upcoming',
-    upcoming: true,
+    year: '2026',
     events: [
       { month: 'Apr', name: 'AI Engineer Europe', location: 'London, UK', role: 'Attendee', url: 'https://www.ai.engineer/europe' },
     ],
