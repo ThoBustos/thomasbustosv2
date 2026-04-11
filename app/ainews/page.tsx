@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'An AI generated daily digest curated from top YouTube channels.',
 }
 
-export const revalidate = 300
+export const dynamic = 'force-dynamic'
 
 async function getIssues(): Promise<DigestSummary[]> {
   try {
