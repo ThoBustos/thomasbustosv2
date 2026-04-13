@@ -22,6 +22,14 @@ const projects: Project[] = [
     oss: true,
   },
   {
+    name: 'IdeaBench',
+    description: 'Where my ideas grow. A public launchpad for all my app ideas. Every idea is built and shipped as a live v1. You vote for the ones that deserve more love.',
+    year: '2026',
+    url: 'https://github.com/ThoBustos/ideabench',
+    liveUrl: 'https://www.ideabench.ai/',
+    oss: true,
+  },
+  {
     name: 'Quizz MCP',
     description:
       'MCP + Next.js app that turns any content into quizzes. I use it a lot when building to test myself on concepts, or when writing docs, strategy, processing calls, testing my understanding and exploring my own limiting beliefs.',
