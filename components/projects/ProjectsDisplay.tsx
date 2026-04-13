@@ -14,19 +14,19 @@ interface Project {
 const projects: Project[] = [
   // 2026 - newest first
   {
-    name: 'thomasbustos.com v2',
-    description: 'V2 of my personal website. Built with Next.js 15, Tailwind v4, and GSAP.',
-    year: '2026',
-    url: 'https://github.com/ThoBustos/thomasbustosv2',
-    liveUrl: 'https://thomasbustos.com',
-    oss: true,
-  },
-  {
     name: 'IdeaBench',
     description: 'Where my ideas grow. A public launchpad for all my app ideas. Every idea is built and shipped as a live v1. You vote for the ones that deserve more love.',
     year: '2026',
     url: 'https://github.com/ThoBustos/ideabench',
     liveUrl: 'https://www.ideabench.ai/',
+    oss: true,
+  },
+  {
+    name: 'thomasbustos.com v2',
+    description: 'V2 of my personal website. Built with Next.js 15, Tailwind v4, and GSAP.',
+    year: '2026',
+    url: 'https://github.com/ThoBustos/thomasbustosv2',
+    liveUrl: 'https://thomasbustos.com',
     oss: true,
   },
   {
