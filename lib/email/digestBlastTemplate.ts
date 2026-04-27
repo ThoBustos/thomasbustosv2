@@ -144,7 +144,6 @@ export function digestBlastTemplate({
       ? `<p style="margin:0 0 20px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:0.93rem;color:#333333;line-height:1.7;">${esc(intro)}</p>`
       : ''
 
-  // Pull quote — plain div, no nested table
   const pullQuoteBlock =
     pullQuote
       ? `<div style="margin:0 0 24px;padding:0 0 0 16px;border-left:2px solid #7C6AC4;">
