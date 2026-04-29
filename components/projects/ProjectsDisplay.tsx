@@ -14,6 +14,14 @@ interface Project {
 const projects: Project[] = [
   // 2026 - newest first
   {
+    name: 'LearnRep',
+    description: 'Generate quizzes from your terminal. Built for engineers who learn by doing — run a command, get a quiz, share it with your team. CLI-first, MCP-ready, open source.',
+    year: '2026',
+    url: 'https://github.com/ThoBustos/learnrep',
+    liveUrl: 'https://learnrep.ideabench.ai/',
+    oss: true,
+  },
+  {
     name: 'IdeaBench',
     description: 'Where my ideas grow. A public launchpad for all my app ideas. Every idea is built and shipped as a live v1. You vote for the ones that deserve more love.',
     year: '2026',
