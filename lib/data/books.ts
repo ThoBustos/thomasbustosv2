@@ -29,6 +29,7 @@ export const BOOKS: Book[] = [
   { title: "Poor Charlie's Almanack", author: 'Charlie Munger', category: 'Business', status: 'read', isFavorite: false, year: 2005, cover: "/img/books/poor_charlie's_almanack.jpg" },
   { title: 'Skin in the Game', author: 'Nassim Nicholas Taleb', category: 'Business', status: 'read', isFavorite: false, year: 2018, cover: '/img/books/skin_in_the_game.jpg' },
   { title: "The Innovator's Dilemma", author: 'Clayton Christensen', category: 'Business', status: 'reading', isFavorite: false, year: 1997, cover: "/img/books/the_innovator's_dilemma.jpg" },
+  { title: 'The Five Dysfunctions of a Team', author: 'Patrick Lencioni', category: 'Business', status: 'reading', isFavorite: false, year: 2002, cover: '/img/books/the_five_dysfunctions_of_a_team.jpg' },
   { title: 'Reality Transurfing', author: 'Vadim Zeland', category: 'Mind', status: 'read', isFavorite: false, year: 2004, cover: '/img/books/reality_transurfing.jpg' },
   { title: 'Unlimited Power', author: 'Tony Robbins', category: 'Mind', status: 'read', isFavorite: false, year: 1986, cover: '/img/books/unlimited_power.jpg' },
   { title: "Man's Search for Meaning", author: 'Viktor Frankl', category: 'Mind', status: 'read', isFavorite: false, year: 1946, cover: "/img/books/man's_search_for_meaning.webp" },
