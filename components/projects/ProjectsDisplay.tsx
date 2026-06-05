@@ -14,6 +14,12 @@ interface Project {
 const projects: Project[] = [
   // 2026 - newest first
   {
+    name: 'small.design',
+    description: 'My small design studio.',
+    year: '2026',
+    liveUrl: 'https://small.design',
+  },
+  {
     name: 'LearnRep',
     description: 'Generate quizzes from your terminal. Built for engineers who learn by doing — run a command, get a quiz, share it with your team. CLI-first, MCP-ready, open source.',
     year: '2026',
