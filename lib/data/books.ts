@@ -44,7 +44,7 @@ export const BOOKS: Book[] = [
   { title: 'On Writing Well', author: 'William Zinsser', category: 'Mind', status: 'reading', isFavorite: false, year: 2006, cover: '/img/books/on_writing_well.jpg' },
   { title: 'The Power of Now', author: 'Eckhart Tolle', category: 'Mind', status: 'read', isFavorite: false, year: 1997, cover: '/img/books/the_power_of_now.jpg' },
   { title: 'The Art of Happiness', author: 'Dalai Lama', category: 'Mind', status: 'read', isFavorite: false, year: 1998, cover: '/img/books/the_art_of_happiness.jpg' },
-  { title: 'The Obstacle Is the Way', author: 'Ryan Holiday', category: 'Mind', status: 'read', isFavorite: false, year: 2014, cover: '/img/books/the_obstacle_is_the_way.jpg' },
+  { title: 'The Obstacle Is the Way', author: 'Ryan Holiday', category: 'Philosophy', status: 'read', isFavorite: false, year: 2014, cover: '/img/books/the_obstacle_is_the_way.jpg' },
   { title: 'The Alchemist', author: 'Paulo Coelho', category: 'Mind', status: 'read', isFavorite: false, year: 1988, cover: '/img/books/the_alchemist.jpg' },
   { title: 'Meditations', author: 'Marcus Aurelius', category: 'Philosophy', status: 'read', isFavorite: false, year: 180, cover: '/img/books/meditations.jpg' },
   { title: 'Human, All Too Human', author: 'Friedrich Nietzsche', category: 'Philosophy', status: 'read', isFavorite: false, year: 1878, cover: '/img/books/human_all_too_human.jpg' },
