@@ -57,6 +57,8 @@ export const BOOKS: Book[] = [
   { title: 'The RLHF Book', author: 'Nathan Lambert', category: 'Science', status: 'read', isFavorite: false, year: 2025, cover: '/img/books/the_rlhf_book.webp' },
   { title: 'The Little Book of Deep Learning', author: 'François Fleuret', category: 'Science', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/the_little_book_of_deep_learning.jpg' },
   { title: 'A Brief History of Time', author: 'Stephen Hawking', category: 'Science', status: 'reading', isFavorite: false, year: 1988, cover: '/img/books/a_brief_history_of_time.jpg' },
+  { title: 'How Not to Be Wrong: The Hidden Maths of Everyday Life', author: 'Jordan Ellenberg', category: 'Science', status: 'reading', isFavorite: false, year: 2014, cover: '/img/books/how_not_to_be_wrong.jpg' },
+  { title: 'The Beginning of Infinity', author: 'David Deutsch', category: 'Science', status: 'reading', isFavorite: false, year: 2011, cover: '/img/books/the_beginning_of_infinity.jpg' },
   { title: 'Design Patterns: Elements of Reusable Object-Oriented Software', author: 'Gamma, Helm, Johnson, Vlissides', category: 'Science', status: 'to-read', isFavorite: false, year: 1994, cover: '/img/books/design_patterns_big_four.webp' },
   { title: 'Sapiens', author: 'Yuval Noah Harari', category: 'History', status: 'read', isFavorite: false, year: 2011, cover: '/img/books/sapiens.jpg' },
   { title: 'The Lessons of History', author: 'Will & Ariel Durant', category: 'History', status: 'read', isFavorite: false, year: 1968, cover: '/img/books/the_lessons_of_history.jpg' },
