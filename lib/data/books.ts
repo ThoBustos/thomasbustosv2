@@ -64,7 +64,7 @@ export const BOOKS: Book[] = [
   { title: 'The Beginning of Infinity', author: 'David Deutsch', category: 'Science', status: 'reading', isFavorite: false, year: 2011, cover: '/img/books/the_beginning_of_infinity.jpg' },
   { title: 'Design Patterns: Elements of Reusable Object-Oriented Software', author: 'Gamma, Helm, Johnson, Vlissides', category: 'Science', status: 'to-read', isFavorite: false, year: 1994, cover: '/img/books/design_patterns_big_four.webp' },
   { title: 'Sapiens', author: 'Yuval Noah Harari', category: 'History', status: 'read', isFavorite: false, year: 2011, cover: '/img/books/sapiens.jpg' },
-  { title: 'The Lessons of History', author: 'Will & Ariel Durant', category: 'History', status: 'read', isFavorite: false, year: 1968, cover: '/img/books/the_lessons_of_history.jpg' },
+  { title: 'The Lessons of History', author: 'Will & Ariel Durant', category: 'History', status: 'read', isFavorite: true, year: 1968, cover: '/img/books/the_lessons_of_history.jpg' },
   { title: 'Einstein: His Life and Universe', author: 'Walter Isaacson', category: 'History', status: 'read', isFavorite: false, year: 2007, cover: '/img/books/einstein.jpg' },
   { title: 'Elon Musk', author: 'Walter Isaacson', category: 'History', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/elon_musk.jpg' },
   { title: 'Leonardo da Vinci', author: 'Walter Isaacson', category: 'History', status: 'read', isFavorite: false, year: 2017, cover: '/img/books/leonardo_da_vinci.jpg' },
