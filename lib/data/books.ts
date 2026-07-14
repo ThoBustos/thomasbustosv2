@@ -31,6 +31,7 @@ export const BOOKS: Book[] = [
   { title: "The Innovator's Dilemma", author: 'Clayton Christensen', category: 'Business', status: 'reading', isFavorite: false, year: 1997, cover: "/img/books/the_innovator's_dilemma.jpg" },
   { title: 'Think Faster, Talk Smarter', author: 'Matt Abrahams', category: 'Business', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/think_faster_talk_smarter.jpg' },
   { title: 'The Five Dysfunctions of a Team', author: 'Patrick Lencioni', category: 'Business', status: 'reading', isFavorite: false, year: 2002, cover: '/img/books/the_five_dysfunctions_of_a_team.jpg' },
+  { title: 'The Great CEO Within', author: 'Matt Mochary', category: 'Business', status: 'reading', isFavorite: false, year: 2019, cover: '/img/books/the_great_ceo_within.jpg' },
   { title: 'Reality Transurfing', author: 'Vadim Zeland', category: 'Mind', status: 'read', isFavorite: false, year: 2004, cover: '/img/books/reality_transurfing.jpg' },
   { title: 'Unlimited Power', author: 'Tony Robbins', category: 'Mind', status: 'read', isFavorite: false, year: 1986, cover: '/img/books/unlimited_power.jpg' },
   { title: "Man's Search for Meaning", author: 'Viktor Frankl', category: 'Mind', status: 'read', isFavorite: false, year: 1946, cover: "/img/books/man's_search_for_meaning.webp" },
