@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-interface Project {
+export interface Project {
   name: string
   description: string
   year: string
@@ -11,7 +11,7 @@ interface Project {
   oss?: boolean
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
   // 2026 - newest first
   {
     name: 'small.design',
@@ -113,7 +113,11 @@ const projects: Project[] = [
 
 const years = [...new Set(projects.map(p => p.year))].sort((a, b) => Number(b) - Number(a))
 
-export default function ProjectsDisplay() {
+interface ProjectsDisplayProps {
+  stars?: Record<string, number>
+}
+
+export default function ProjectsDisplay({ stars = {} }: ProjectsDisplayProps) {
   return (
     <main
       id="main-content"
@@ -153,12 +157,12 @@ export default function ProjectsDisplay() {
                     fontFamily: 'var(--font-geist), sans-serif',
                     fontSize: '0.75rem',
                     letterSpacing: '0.15em',
-                    color: '#d4d4d4',
+                    color: '#a3a3a3',
                   }}
                 >
                   {year}
                 </span>
-                <div className="flex-1 h-px bg-neutral-100" />
+                <div className="flex-1 h-px bg-neutral-300" />
               </div>
 
               {/* Project entries */}
@@ -223,6 +227,19 @@ export default function ProjectsDisplay() {
                           >
                             Open Source ↗
                           </a>
+                        )}
+                        {project.oss && project.url && stars[project.url] != null && (
+                          <span
+                            style={{
+                              fontFamily: 'var(--font-geist), sans-serif',
+                              fontSize: '0.65rem',
+                              letterSpacing: '0.1em',
+                              color: '#a3a3a3',
+                              textTransform: 'uppercase',
+                            }}
+                          >
+                            ★ {stars[project.url]}
+                          </span>
                         )}
                         {project.liveUrl && (
                           <a
