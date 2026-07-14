@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import ProjectsDisplay, { projects } from '@/components/projects/ProjectsDisplay'
+import ProjectsDisplay from '@/components/projects/ProjectsDisplay'
+import { projects } from '@/lib/data/projects'
 import { getStars } from '@/lib/github'
 
 export const metadata: Metadata = {
