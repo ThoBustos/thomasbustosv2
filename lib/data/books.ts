@@ -21,6 +21,7 @@ export const BOOKS: Book[] = [
   { title: '7 Powers', author: 'Hamilton Helmer', category: 'Business', status: 'read', isFavorite: false, year: 2016, cover: '/img/books/7_powers.jpg' },
   { title: 'Never Enough', author: 'Howard Schultz', category: 'Business', status: 'read', isFavorite: false, year: 2024, cover: '/img/books/never_enough.webp' },
   { title: 'Incorruptible', author: 'Eric Ries', category: 'Business', status: 'to-read', isFavorite: false, year: 2024, cover: '/img/books/incorruptible.jpg' },
+  { title: 'How to Make a Few Billion Dollars', author: 'Brad Jacobs', category: 'Business', status: 'read', isFavorite: false, year: 2024, cover: '/img/books/how_to_make_a_few_billion_dollars.jpg' },
   { title: 'The Making of a Manager', author: 'Julie Zhuo', category: 'Business', status: 'read', isFavorite: false, year: 2019, cover: '/img/books/the_making_of_a_manager.jpg' },
   { title: '$100M Leads', author: 'Alex Hormozi', category: 'Business', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/$100M_leads.jpg' },
   { title: '$100M Offers', author: 'Alex Hormozi', category: 'Business', status: 'read', isFavorite: false, year: 2021, cover: '/img/books/$100M_offers.jpg' },
