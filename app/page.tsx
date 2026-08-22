@@ -39,6 +39,21 @@ export default function HomePage() {
 
       {/* Newsletter */}
       <NewsletterRow />
+
+      <a
+        className="yoko-bubble"
+        href="https://openyoko.com"
+        aria-label="Meet Yoko on OpenYoko"
+        title="Meet Yoko"
+      >
+        <img
+          src="https://openyoko-production.up.railway.app/assets/yoko-BfLRCcce.webp"
+          alt=""
+          width="1254"
+          height="1254"
+        />
+        <span>Meet Yoko</span>
+      </a>
     </main>
   )
 }
