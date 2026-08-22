@@ -30,7 +30,6 @@ const jsonLd = {
     'https://github.com/ThoBustos',
     'https://www.youtube.com/@lets-talk-ai',
     'https://thomasbustos.substack.com/',
-    'https://www.ainativeclub.com/',
   ],
 }
 

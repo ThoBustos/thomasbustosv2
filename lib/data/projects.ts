@@ -10,6 +10,13 @@ export interface Project {
 export const projects: Project[] = [
   // 2026 - newest first
   {
+    name: 'Napkin Academy',
+    description: 'A business-number gym for building speed, confidence, and commercial fluency.',
+    year: '2026',
+    url: 'https://github.com/ThoBustos/napkin',
+    oss: true,
+  },
+  {
     name: 'small.design',
     description: 'My small design studio :)',
     year: '2026',
@@ -74,11 +81,12 @@ export const projects: Project[] = [
     oss: true,
   },
   {
-    name: 'Yoko OS',
+    name: 'OpenYoko',
     description:
       'Probably my build I\'ve been using the most in the last months. My full system to manage day-to-day that I use with tmux.',
     year: '2026',
     url: 'https://github.com/ThoBustos/yoko-os',
+    liveUrl: 'https://openyoko.com',
     oss: true,
   },
   // 2025 - newest first
