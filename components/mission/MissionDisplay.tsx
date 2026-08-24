@@ -20,7 +20,7 @@ export default function MissionDisplay() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        Build exceptional products with exceptional people.
+        Build exceptional products with great people.
         <br />
         Have fun.
         <br />

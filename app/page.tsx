@@ -43,6 +43,8 @@ export default function HomePage() {
       <a
         className="yoko-bubble"
         href="https://openyoko.com"
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="Meet Yoko on OpenYoko"
         title="Meet Yoko"
       >

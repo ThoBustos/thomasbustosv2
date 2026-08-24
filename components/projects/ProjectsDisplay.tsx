@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { projects } from '@/lib/data/projects'
 
@@ -10,6 +11,16 @@ interface ProjectsDisplayProps {
 }
 
 export default function ProjectsDisplay({ stars = {} }: ProjectsDisplayProps) {
+  useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration
+    }
+  }, [])
+
   return (
     <main
       id="main-content"
