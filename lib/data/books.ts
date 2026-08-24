@@ -26,7 +26,7 @@ export const BOOKS: Book[] = [
   { title: 'The E-Myth Revisited', author: 'Michael E. Gerber', category: 'Business', status: 'read', isFavorite: false, year: 1995, cover: '/img/books/the_e_myth_revisited.jpg' },
   { title: 'The New Articulate Executive', author: 'Granville N. Toogood', category: 'Business', status: 'read', isFavorite: false, year: 2009, cover: '/img/books/the_new_articulate_executive.jpg' },
   { title: 'Get to the Point!', author: 'Joel Schwartzberg', category: 'Business', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/get_to_the_point.jpg' },
-  { title: 'Financial Intelligence for Entrepreneurs', author: 'Karen Berman & Joe Knight', category: 'Business', status: 'reading', isFavorite: false, year: 2008, cover: '/img/books/financial_intelligence_for_entrepreneurs.jpg' },
+  { title: 'Financial Intelligence for Entrepreneurs', author: 'Karen Berman & Joe Knight', category: 'Business', status: 'reading', isFavorite: true, year: 2008, cover: '/img/books/financial_intelligence_for_entrepreneurs.jpg' },
   { title: 'The Making of a Manager', author: 'Julie Zhuo', category: 'Business', status: 'read', isFavorite: false, year: 2019, cover: '/img/books/the_making_of_a_manager.jpg' },
   { title: '$100M Leads', author: 'Alex Hormozi', category: 'Business', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/$100M_leads.jpg' },
   { title: '$100M Offers', author: 'Alex Hormozi', category: 'Business', status: 'read', isFavorite: false, year: 2021, cover: '/img/books/$100M_offers.jpg' },
