@@ -13,7 +13,9 @@ export const projects: Project[] = [
     name: 'Napkin Academy',
     description: 'A business-number gym for building speed, confidence, and commercial fluency.',
     year: '2026',
+    url: 'https://github.com/ThoBustos/napkin',
     liveUrl: 'https://napkin.academy',
+    oss: true,
   },
   {
     name: 'small.design',
