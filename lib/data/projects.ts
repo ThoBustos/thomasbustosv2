@@ -10,6 +10,13 @@ export interface Project {
 export const projects: Project[] = [
   // 2026 - newest first
   {
+    name: 'Yoko Voice',
+    description: 'My open-source alternative to Superwhisper and Wispr Flow, with both private local transcription and connected AI modes.',
+    year: '2026',
+    url: 'https://github.com/ThoBustos/yoko-whisper',
+    oss: true,
+  },
+  {
     name: 'Napkin Academy',
     description: 'A business-number gym for building speed, confidence, and commercial fluency.',
     year: '2026',
