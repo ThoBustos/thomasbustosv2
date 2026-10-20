@@ -34,7 +34,7 @@ export const BOOKS: Book[] = [
   { title: 'High Output Management', author: 'Andrew S. Grove', category: 'Business', status: 're-reading', isFavorite: false, year: 1983, cover: '/img/books/high_output_management.jpg' },
   { title: 'The Lean Product Playbook', author: 'Dan Olsen', category: 'Business', status: 'read', isFavorite: true, year: 2015, cover: '/img/books/the_lean_product_playbook.jpg' },
   { title: 'Principles', author: 'Ray Dalio', category: 'Business', status: 'read', isFavorite: false, year: 2017, cover: '/img/books/principles.jpg' },
-  { title: "Poor Charlie's Almanack", author: 'Charlie Munger', category: 'Business', status: 're-reading', isFavorite: false, year: 2005, cover: "/img/books/poor_charlie's_almanack.jpg" },
+  { title: "Poor Charlie's Almanack", author: 'Charlie Munger', category: 'Business', status: 're-reading', isFavorite: true, year: 2005, cover: "/img/books/poor_charlie's_almanack.jpg" },
   { title: 'Skin in the Game', author: 'Nassim Nicholas Taleb', category: 'Business', status: 'read', isFavorite: false, year: 2018, cover: '/img/books/skin_in_the_game.jpg' },
   { title: "The Innovator's Dilemma", author: 'Clayton Christensen', category: 'Business', status: 'read', isFavorite: false, year: 1997, cover: "/img/books/the_innovator's_dilemma.jpg" },
   { title: 'Think Faster, Talk Smarter', author: 'Matt Abrahams', category: 'Business', status: 'read', isFavorite: false, year: 2023, cover: '/img/books/think_faster_talk_smarter.jpg' },
