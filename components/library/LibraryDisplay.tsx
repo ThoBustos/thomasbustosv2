@@ -12,12 +12,14 @@ type Filter = typeof FILTERS[number]
 const statusDot: Record<Status, { color: string; title: string }> = {
   read:     { color: '#000000', title: 'Read' },
   reading:  { color: '#7C6AC4', title: 'Reading' },
+  're-reading': { color: '#2A9D8F', title: 'Re-reading' },
   'to-read':{ color: '#d4d4d4', title: 'To read' },
 }
 
 const statusLabel: Record<Status, string> = {
   read: 'Read',
   reading: 'Reading',
+  're-reading': 'Re-reading',
   'to-read': 'To read',
 }
 
@@ -32,7 +34,7 @@ export default function LibraryDisplay() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  const statusOrder: Record<Status, number> = { reading: 0, read: 1, 'to-read': 2 }
+  const statusOrder: Record<Status, number> = { reading: 0, 're-reading': 1, read: 2, 'to-read': 3 }
 
   const filtered = BOOKS
     .filter(b => {
